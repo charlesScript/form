@@ -1,14 +1,17 @@
 import random
 
+
+# générer des nombres aléatoires
 NOMBRE_MIN = random.randrange(1, 10)
 NOMBRE_MAX = random.randrange(50, 60)
 NOMBRE_MAGIQUE = random.randrange(NOMBRE_MIN, NOMBRE_MAX)
 
 
+# foction permettant de demander un nombre à l'utilisateur
 def demander_nombre(nb_min, nb_max):
     nb_int = 0
     while nb_int == 0:
-        nb_str = input(f"Quel est le nombre entre { NOMBRE_MIN } et { NOMBRE_MAX } ? ")
+        nb_str = input(f"Quel est le nombre entre {NOMBRE_MIN} et {NOMBRE_MAX} ? ")
         try:
             nb_int = int(nb_str)
         except ValueError:
@@ -21,6 +24,7 @@ def demander_nombre(nb_min, nb_max):
     return nb_int
 
 
+# Conditions qui testent les entrées de l'utilisateur
 nombre = 0
 vie = 4
 while not nombre == NOMBRE_MAGIQUE and vie > 0:
